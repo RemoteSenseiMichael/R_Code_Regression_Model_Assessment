@@ -1,9 +1,9 @@
 # First Install the following packages if you have not already:
-install.packages('metrica')
+install.packages('Metrics')
 install.packages('stats')
 
 # Once or if the packages are installed, then load them into R:
-library(metrica)
+library(Metrics)
 library(stats)
 
 # Set your working directory:
@@ -21,8 +21,9 @@ R2 <- lm(Model_Results$ALT ~ Model_Results$Modelled)
 # View the results. “Multiple R-squared” is the value you are looking for:
 Summary(R2)
 
-# Calculate mean absolute error (MAE), mean squared error (MSE), root mean squared error (RMSE), and relative absolute error (RAE):
+# Calculate mean absolute error (MAE), mean squared error (MSE), root mean squared error (RMSE), relative absolute error (RAE), mean bias error (MBE):
 mae(Model_Results$ALT, Model_Results$Modelled)
 mse(Model_Results$ALT, Model_Results$Modelled)
 rmse(Model_Results$ALT, Model_Results$Modelled)
 rae(Model_Results$ALT, Model_Results$Modelled)
+bias(Model_Results$ALT, Model_Results$Modelled)
